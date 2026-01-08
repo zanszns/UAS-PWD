@@ -1,0 +1,60 @@
+/* Layout & Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body, html { height: 100%; width: 100%; overflow: hidden; }
+.wrapper { display: flex; flex-direction: column; height: 100vh; }
+
+/* Header & Footer */
+header, footer {
+    background-color: #add8e6; padding: 15px 50px;
+    border: 1px solid #555; text-align: center; flex-shrink: 0;
+}
+header { display: flex; align-items: center; }
+header img { height: 70px; margin-right: 20px; border: 1px solid #000; padding: 2px; background: #fff; }
+.header-text { flex-grow: 1; margin-right: 90px; }
+
+/* Sidebar Navigasi */
+.main-body { display: flex; flex-grow: 1; overflow: hidden; }
+aside { width: 260px; border-right: 2px solid #555; padding: 15px; background-color: #fff; }
+aside h3 { text-align: center; margin-bottom: 25px; font-size: 14px; font-weight: bold; }
+
+/* Styling 3 Kotak Menu */
+.btn-nav {
+    display: block;
+    background-color: #b22222; /* Merah Marun/Tua */
+    color: white;
+    text-decoration: none;
+    padding: 12px 5px;
+    margin-bottom: 5px; /* Memberi jarak antar kotak */
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #700;
+}
+.btn-nav.active {
+    background-color: #ff0000; /* Merah Terang untuk menu aktif */
+}
+
+/* Area Konten */
+.content { flex-grow: 1; padding: 40px; overflow-y: auto; background-color: #f4f4f4; }
+
+/* Form Input (Sejajar Kiri-Tengah-Kanan) */
+.form-title { text-align: center; margin-bottom: 40px; }
+.form-container { max-width: 800px; margin: 0 auto; }
+.form-row { display: flex; margin-bottom: 15px; align-items: flex-start; }
+.form-row label { width: 100px; font-weight: bold; }
+.form-row span { width: 30px; text-align: center; }
+.form-row input, .form-row textarea { flex-grow: 1; padding: 8px; border: 1px solid #ccc; }
+.btn-submit { 
+    flex-grow: 1; background-color: #4CAF50; color: white; padding: 10px; 
+    border: none; cursor: pointer; border-radius: 4px; font-weight: bold; 
+}
+.spacer { width: 130px; }
+
+/* Tabel Jadwal */
+.table-jadwal { width: 100%; border-collapse: collapse; border: 1px solid #000; background: #fff; }
+.table-jadwal th, .table-jadwal td { border: 1px solid #000; padding: 10px; text-align: center; font-size: 12px; }
+.h-pink { background-color: #ffcccc; } .h-green { background-color: #ccffcc; }
+.h-blue { background-color: #ccccff; } .h-yellow { background-color: #ffffcc; }
+.c-pink { background-color: #ffe6e6; } .c-green { background-color: #e6ffe6; }
+.c-blue { background-color: #e6e6ff; } .c-yellow { background-color: #ffffe6; }
+.c-gray { background-color: #d3d3d3; font-weight: bold; }

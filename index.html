@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Akademik UNINDRA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <img src="logo.png" alt="Logo Unindra">
+            <div class="header-text">
+                <h1>UNIVERSITAS INDRAPRASTA PGRI</h1>
+                <p>Jl. Nangka No. 58 Tanjung Barat - Jaksel</p>
+            </div>
+        </header>
+
+        <div class="main-body">
+            <aside>
+                <h3>TAMPIL DATA KAMPUS A</h3>
+                <nav>
+                    <a href="javascript:void(0)" class="btn-nav active" id="nav-input" onclick="showPage('input')">Input Data Mahasiswa</a>
+                    <a href="javascript:void(0)" class="btn-nav" id="nav-tampil" onclick="showPage('tampil')">Tampil Data Mahasiswa</a>
+                    <a href="javascript:void(0)" class="btn-nav" id="nav-jadwal" onclick="showPage('jadwal')">Jadwal Kuliah Mahasiswa</a>
+                </nav>
+            </aside>
+
+            <main class="content">
+                <div id="section-input">
+                    <h2 class="form-title">Input Data Mahasiswa</h2>
+                    <div class="form-container">
+                        <div class="form-row">
+                            <label>NPM</label><span>:</span>
+                            <input type="text">
+                        </div>
+                        <div class="form-row">
+                            <label>Nama</label><span>:</span>
+                            <input type="text">
+                        </div>
+                        <div class="form-row">
+                            <label>Alamat</label><span>:</span>
+                            <textarea rows="6"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="spacer"></div>
+                            <button type="submit" class="btn-submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-tampil" style="display: none;">
+                    <h2>Tampil Data Mahasiswa</h2>
+                    <p style="text-align: center; margin-top: 20px;">Data Mahasiswa akan muncul di sini.</p>
+                </div>
+
+                <div id="section-jadwal" style="display: none;">
+                    <h2>Jadwal Kuliah</h2>
+                    <table class="table-jadwal">
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th class="h-pink">Senin</th>
+                                <th class="h-green">Selasa</th>
+                                <th class="h-blue">Rabu</th>
+                                <th class="h-yellow">Kamis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08:00 - 09:30</td>
+                                <td class="c-pink">Matematika Diskrit</td>
+                                <td class="c-green">Algoritma dan Pemrograman</td>
+                                <td class="c-blue" rowspan="2">Sistem Operasi</td>
+                                <td class="c-yellow">Bahasa Inggris</td>
+                            </tr>
+                            <tr>
+                                <td>09:30 - 11:00</td>
+                                <td class="c-pink">Jaringan Komputer</td>
+                                <td class="c-green">Kalkulus</td>
+                                <td class="c-yellow">Pemrograman Web</td>
+                            </tr>
+                            <tr>
+                                <td>11:00 - 12:30</td>
+                                <td colspan="2" class="c-pink">Proyek Akhir</td>
+                                <td class="c-blue">Pemrograman Mobile</td>
+                                <td class="c-yellow" rowspan="2">Kecerdasan Buatan</td>
+                            </tr>
+                            <tr>
+                                <td>13:00 - 14:30</td>
+                                <td class="c-pink">Manajemen Basis Data</td>
+                                <td class="c-green">Arsitektur Komputer</td>
+                                <td class="c-blue">Keamanan Siber</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="c-gray">Istirahat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p>Created By MUHAMMAD FAUZAN 202433500323 Tahun 2024-25</p>
+        </footer>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Sembunyikan semua section
+            document.getElementById('section-input').style.display = 'none';
+            document.getElementById('section-tampil').style.display = 'none';
+            document.getElementById('section-jadwal').style.display = 'none';
+            
+            // Hapus class active dari semua tombol
+            document.querySelectorAll('.btn-nav').forEach(btn => btn.classList.remove('active'));
+
+            // Tampilkan yang dipilih
+            document.getElementById('section-' + pageId).style.display = 'block';
+            document.getElementById('nav-' + pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
